@@ -1,11 +1,9 @@
 import React from 'react';
 
-function Header (){
+export default function Header (){
     return (
-        <div>
+        <div className="header">
             <h1 className="headername">SimpleStock View</h1>
         </div>
     )
 }
-
-export default Header;

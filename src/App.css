@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Stoke&display=swap');
+
+
 .App {
   text-align: center;
 }
+
+.header{
+  width: 95%;
+  height: 100px;
+  border: 1px solid black; 
+  border-radius: 6px;
+  text-align: center;
+  font-family: 'Stoke', sans-serif;
+  margin: 5px;
+}
+
+.headername {
+  font-size: 54px;
+  margin: 35px 0 27px;
+}
+
+.searchbar{
+  border: none;
+  height: 30px
+}
+
+.quotecontainer{
+  border: 1px solid black;
+  margin: 1px 5px;
+  width: 50%;
+  height: 20px;
+  border-radius: 6px;
+}
+
+.sidecontainer{
+  border: 1px solid black;
+  margin: 1px 5px;
+  width: 50%;
+  height: 20px;
+  border-radius: 6px;
+}
+
