@@ -5,6 +5,7 @@ import Quotes from './Quotes';
 import History from './History'
 import News from './News'
 
+const keyNum = 1;
 const quoteURL = "https://marketdata.websol.barchart.com/getQuote.json?";
 const quoteKey = ["2c8d24b3a535f2162eeafb81cc8d44fb", "bd2e9bad968e8f173210cc941f94b2a5"];
 const newsURL = "https://newsapi.org/v2/everything?q=";
@@ -21,7 +22,7 @@ export default function Home(props) {
     const [historyQuotes, setHistoryQuotes] = useState([]);
 
     async function getQuote(symbol) {
-        let response = await axios.get(`${quoteURL}apikey=${quoteKey[0]}&symbols=${symbol}&fields=${quoteFields}`)
+        let response = await axios.get(`${quoteURL}apikey=${quoteKey[keyNum]}&symbols=${symbol}&fields=${quoteFields}`)
         setQuotes(response.data);
         if (!historyIncludes(symbol.toUpperCase())){
             setHistory([symbol.toUpperCase(),...history])
@@ -30,7 +31,7 @@ export default function Home(props) {
     }
 
     async function getHistory() {
-        let response = await axios.get(`${quoteURL}apikey=${quoteKey[0]}&symbols=${history}&fields=${quoteFields}`)
+        let response = await axios.get(`${quoteURL}apikey=${quoteKey[keyNum]}&symbols=${history}&fields=${quoteFields}`)
         setHistoryQuotes(response.data.results);
     }
 
@@ -67,6 +68,12 @@ export default function Home(props) {
         return false;
     }
 
+    function historyClick(e){
+        e.preventDefault();
+        let value = e.target.getAttribute('name');
+        getQuote(value);
+    }
+
     useEffect(() => {
 
         const currentQuote = async (symbols) => {
@@ -99,7 +106,7 @@ export default function Home(props) {
                         </div>
                         <div className="sidecontainer">
                             <div className="historycontainer">
-                                <History history={history} historyQuotes={historyQuotes}/>
+                                <History history={history} historyQuotes={historyQuotes} historyClick={historyClick}/>
                             </div>
                             <div className="newscontainer">
                                 <News news={news} />

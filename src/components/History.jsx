@@ -14,7 +14,7 @@ export default function History(props) {
                         return null;
                     }
                     return (
-                        <div key={index}>
+                        <div key={index} name={historyitem} onClick={props.historyClick}>
                             {historyitem}
                         </div>
                     )
@@ -28,7 +28,7 @@ export default function History(props) {
                         return null;
                     }
                     return (
-                        <div className="historynumbers">
+                        <div className="historynumbers" key={index}>
                         <div className="historylastprice">
                             {quote.lastPrice}
                         </div>
