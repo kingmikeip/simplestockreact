@@ -7,7 +7,7 @@ export default function News(props) {
     return (
         <div className="news">
             {props.news && props.news.map((article, index) => {
-                if (index > 5) {
+                if (index > 4) {
                     return null;
                 }
                 (article.urlToImage === null ? articleToImage = "./assets/stockchart.jpg" : articleToImage = article.urlToImage)

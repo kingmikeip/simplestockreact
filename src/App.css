@@ -64,6 +64,10 @@
   width: 40%;
 }
 
+.historynameitem:hover{
+  color: blue;
+}
+
 .historyvalues{
   display: flex;
   flex-direction: column;

@@ -14,7 +14,7 @@ export default function History(props) {
                         return null;
                     }
                     return (
-                        <div key={index} name={historyitem} onClick={props.historyClick}>
+                        <div key={index} name={historyitem} onClick={props.historyClick} className="historynameitem">
                             {historyitem}
                         </div>
                     )

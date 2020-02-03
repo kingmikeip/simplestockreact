@@ -72,6 +72,7 @@ export default function Home(props) {
         e.preventDefault();
         let value = e.target.getAttribute('name');
         getQuote(value);
+        getNews(value);
     }
 
     useEffect(() => {
