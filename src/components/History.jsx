@@ -3,10 +3,10 @@ import React from 'react';
 export default function History(props) {
     return (
         <div>
-            <span id="ticker">Ticker </span>
-            <span id="current">Current Price </span> 
-            <span id="change">Change </span> 
-            <span id="pct">% </span>  
+            <span id="ticker">Ticker</span>
+            <span id="current">Current Price</span> 
+            <span id="change">Change</span> 
+            <span id="pct">%</span>  
             <div className="history">
             <div className="historynames">
                 {props.history && props.history.map((historyitem, index) => {
