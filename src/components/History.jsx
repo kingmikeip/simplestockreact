@@ -24,18 +24,24 @@ export default function History(props) {
 
             <div className="historyvalues">
                 {props.historyQuotes && props.historyQuotes.map((quote, index) => {
+                    let stockColor;
                     if (index > 4) {
                         return null;
                     }
+                    if (quote && quote.percentChange>0){
+                        stockColor = 'green';
+                    } else if (quote && quote.percentChange<0){
+                        stockColor = 'red';
+                    } 
                     return (
                         <div className="historynumbers" key={index}>
                         <div className="historylastprice">
                             {quote.lastPrice}
                         </div>
-                        <div className="historynetchange">
-                            {quote.netChange}
+                        <div className={`historynetchange ${stockColor}`}>
+                            {(Math.floor(quote.netChange * 100) / 100)}
                         </div>
-                        <div className="historypercentchange">
+                        <div className={`historypercentchange ${stockColor}` }>
                             {quote.percentChange}
                         </div>
                         </div>

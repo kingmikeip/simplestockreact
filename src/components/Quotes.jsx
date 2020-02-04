@@ -7,7 +7,7 @@ export default function Quotes(props) {
     if (props.quotes.results) {
         lastTrade = props.quotes.results[0].tradeTimestamp.slice(0, 10) + ' ' + props.quotes.results[0].tradeTimestamp.slice(11, 19) + ' EST';
     } else {
-        lastTrade = "undefined";
+        lastTrade = "N/A";
     }
 
     if (props.quotes.results && props.quotes.results[0].percentChange>0){
@@ -29,7 +29,7 @@ export default function Quotes(props) {
                 </span>
                 </h2>
 
-                <h3>{lastTrade}</h3>
+                <h3>{`Last Trade ${lastTrade}`}</h3>
 
                 <div>
 

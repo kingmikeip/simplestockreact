@@ -51,7 +51,9 @@
 
 .historycontainer{
   border: 1px solid black;
-  height: 50vh;
+  height: auto;
+  margin: 3px;
+  padding: 3px;
 }
 
 .history{
@@ -93,7 +95,7 @@
 #current, #change, #pct{
   display: inline-block;
   width: 20%;
-  text-align: center;
+  text-align: right;
 }
 
 .historylastprice, .historynetchange, .historypercentchange{
