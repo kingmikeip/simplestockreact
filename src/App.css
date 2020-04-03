@@ -30,6 +30,8 @@
   width: 95vw;
   display: flex;
   flex-direction: row;
+  height: auto;
+  min-height: 100vh;
 }
 
 .quotecontainer{
